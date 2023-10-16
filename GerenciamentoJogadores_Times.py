@@ -33,7 +33,7 @@ opcoes = 0
 
 while opcoes != 7:
       print('')
-      print('#################### Seja bem vindo ao "Soccer Fut 2023" | Escolha entre as opções de 1 à 6 ####################')
+      print('#################### Seja bem vindo ao "Soccer Fut 2023" | Escolha entre as opções de 1 à 7 ####################')
       opcoes = input('''1. ListarTimes | 2. AddTime | 3. RemoveTime | 4. AddJogador | 5. RemoveJogador | 6. ListarJogadores | 7. SAIR: ''')
       print('')
       
