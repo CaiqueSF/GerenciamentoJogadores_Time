@@ -34,33 +34,33 @@ opcoes = 0
 while opcoes != 7:
       print('')
       print('#################### Seja bem vindo ao "Soccer Fut 2023" | Escolha entre as opções de 1 à 7 ####################')
-      opcoes = input('''1. ListarTimes | 2. AddTime | 3. RemoveTime | 4. AddJogador | 5. RemoveJogador | 6. ListarJogadores | 7. SAIR: ''')
+      opcoes = int(input('''1. ListarTimes | 2. AddTime | 3. RemoveTime | 4. AddJogador | 5. RemoveJogador | 6. ListarJogadores | 7. SAIR: '''))
       print('')
       
-      if opcoes == '1':
+      if opcoes == 1:
             for chave, valor in times.items():
                   qtdJogadores = len(valor)
-                  print(f'• {chave}: {valor} | "{qtdJogadores}" jogadores.')
+                  print(f'• {chave}: {valor} "{qtdJogadores}" jogadores.')
 
-      elif opcoes == '2':
+      elif opcoes == 2:
             novoTime = input('Qual time deseja adicionar? ')
-            times[novoTime] = ''
+            times[novoTime] = []
             pp.pprint(times.keys())
 
-      elif opcoes == '3':
+      elif opcoes == 3:
             removeTime = input('Qual time deseja remover? ')
             times.pop(removeTime)
             pp.pprint(times.keys())
-      
-      elif opcoes == '4':
+
+      elif opcoes == 4:
             novoJogador = input('Qual o nome do jogador que deseja add? ')
             qualTime = input(f'Em qual time deseja add o "{novoJogador}"? ')
             
             if qualTime in times:
                   times[qualTime].append(novoJogador)
-                  pp.pprint(times[qualTime])
+                  print(times[qualTime])
       
-      elif opcoes == '5':
+      elif opcoes == 5:
             qualTime = input('O jogador que deseja remover perterce a qual time? ')
             pp.pprint(times[qualTime])
             print('')
@@ -69,14 +69,14 @@ while opcoes != 7:
             if qualTime in times:
                   times[qualTime].remove(removeJogador)
                   pp.pprint(times[qualTime])
-      
-      elif opcoes == '6':
+
+      elif opcoes == 6:
             print(times.keys())
             qualTime = input('Deseja listar os jogadores de qual time acima? ')
             pp.pprint(times[qualTime])
-            
-      elif opcoes == '7':
+
+      elif opcoes == 7:
             opcoes = 7
-      
+        
       else:
             print('OPÇÃO INVÁLIDA: escolha as opções de 1 à 7')
